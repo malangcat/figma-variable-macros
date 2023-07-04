@@ -49,3 +49,8 @@ Tired of the exhausting task of documenting design tokens on Figma? Finding it p
 | %b     | Print blue value of Color variable (0~255)                        |
 | %a     | Print alpha value of Color variable (0~1)                         |
 | %bound | If variable is aliasing other variable, print bound variable name |
+
+## To-do
+
+- [] Manage evaluation order of variables from the formula dependency graph
+- [] Prevent formula circular dependencies
