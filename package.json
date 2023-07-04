@@ -1,0 +1,44 @@
+{
+  "name": "figma-variable-macros",
+  "version": "1.0.0",
+  "description": "Figma plugin to enable variable macros",
+  "author": {
+    "name": "malangcat",
+    "email": "asher@daangn.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn tsc && yarn build",
+    "format": "prettier --write .",
+    "tsc": "yarn tsc:main && yarn tsc:ui",
+    "tsc:main": "tsc --noEmit -p plugin-src",
+    "tsc:ui": "tsc --noEmit -p ui-src",
+    "tsc:watch": "concurrently -n widget,iframe \"yarn tsc:main --watch --preserveWatchOutput\" \"yarn tsc:ui --watch --preserveWatchOutput\"",
+    "build": "yarn build:ui && yarn build:main --minify",
+    "build:main": "esbuild plugin-src/code.ts --bundle --outfile=dist/code.js",
+    "build:ui": "yarn vite build --minify esbuild --emptyOutDir=false",
+    "build:watch": "concurrently -n widget,iframe \"yarn build:main --watch\" \"yarn build:ui --watch\"",
+    "dev": "concurrently -n tsc,build,vite 'npm:tsc:watch' 'npm:build:watch' 'vite'"
+  },
+  "dependencies": {
+    "color2k": "^2.0.2",
+    "math-expression-evaluator": "^2.0.3",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "*",
+    "@types/chroma-js": "^2.4.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "concurrently": "^6.3.0",
+    "esbuild": "^0.18.11",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.2",
+    "vite": "^2.5.2",
+    "vite-plugin-singlefile": "^0.5.1",
+    "vite-svg-loader": "^3.3.0"
+  },
+  "packageManager": "yarn@3.6.1"
+}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "strict": true,
+    "types": ["@figma/plugin-typings"],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  }
+}

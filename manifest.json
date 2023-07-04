@@ -1,0 +1,12 @@
+{
+  "name": "Figma Variable Macros",
+  "id": "1258178510977762512",
+  "api": "1.0.0",
+  "editorType": ["figma"],
+  "permissions": [],
+  "main": "dist/code.js",
+  "ui": "dist/index.html",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}
